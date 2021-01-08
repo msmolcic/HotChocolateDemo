@@ -1,0 +1,14 @@
+﻿query GetBorrowers {
+  borrowers(skip: 0, take: 10) {
+    items {
+      id
+      name
+      loans(skip: 0, take: 10) {
+        items {
+          id
+          amount
+        }
+      }
+    }
+  }
+}
