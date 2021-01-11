@@ -25,7 +25,6 @@
                 .Field(t => t.Loans)
                 .ResolveWith<LoanResolvers>(t => t.GetLoans(default!, default!))
                 .UseDbContext<ApplicationDbContext>()
-                .AddOffsetPagingArguments()
                 .UseOffsetPaging<NonNullType<LoanType>>()
                 .Name("loans");
         }

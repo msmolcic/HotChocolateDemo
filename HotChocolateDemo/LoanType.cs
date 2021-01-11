@@ -26,7 +26,6 @@
                 .ResolveWith<LoanResolvers>(t => t.GetBorrowers(default!, default!))
                 .UseDbContext<ApplicationDbContext>()
                 // FIXME (msmolcic): When paging is turned on here, everything blows up.
-                //.AddOffsetPagingArguments()
                 //.UseOffsetPaging<NonNullType<BorrowerType>>()
                 .Name("borrowers");
         }
