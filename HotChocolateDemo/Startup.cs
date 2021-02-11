@@ -22,9 +22,10 @@ namespace HotChocolateDemo
                 .EnableRelaySupport()
                 .AddDataLoader<BorrowerByIdDataLoader>()
                 .AddDataLoader<LoanByIdDataLoader>()
+                .AddProjections()
                 .EnsureDatabaseIsCreated()
                 .AddFileSystemQueryStorage("./StoredQueries")
-                .UseActivePersistedQueryPipeline();
+                .UseAutomaticPersistedQueryPipeline();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

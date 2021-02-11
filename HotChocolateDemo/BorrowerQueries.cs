@@ -2,6 +2,7 @@
 {
     using System.Linq;
     using HotChocolate;
+    using HotChocolate.Data;
     using HotChocolate.Types;
     using Microsoft.EntityFrameworkCore;
 
@@ -10,6 +11,7 @@
     {
         [UseApplicationDbContext]
         [UseOffsetPaging(typeof(NonNullType<BorrowerType>))]
+        [UseProjection]
         public IQueryable<Borrower> GetBorrowers(
             [ScopedService] ApplicationDbContext context) =>
             context.Borrowers.AsNoTracking().OrderBy(e => e.Id);
